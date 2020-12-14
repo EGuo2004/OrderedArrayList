@@ -28,4 +28,15 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
       add(element);
     }
   }
+  
+  public T set (int index, T element) {
+    if (element == null) {
+      throw new IllegalArgumentException("Index can not be null.");
+    } else {
+      T x = get(index);
+      super.remove(index);
+      add(element);
+      return x;
+    }
+  }
 }
